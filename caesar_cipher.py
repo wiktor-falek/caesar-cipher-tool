@@ -5,6 +5,8 @@ import string
 from contextlib import suppress
 
 
+exit_command_list = ['exit', 'e', 'leave', 'back', '-exit', '-e', '-back', '-leave']
+
 def is_digit(n):
     try:
         int(n)
@@ -18,7 +20,7 @@ def valid_int_input():
     n = 'wrong'
     while is_digit(n) == False:
         n = input('>')
-        if n in ['exit', 'e', 'leave', 'back', '-exit', '-e', 'back', 'leave']:
+        if n in exit_command_list:
             main()
         
         if is_digit(n) == False:
@@ -32,7 +34,7 @@ def valid_int_input():
 
 def cipher():
     txt = input('Input sentence to cipher:\n>')
-    if txt in ['exit', 'e', 'leave', 'back', '-exit', '-e', 'back', 'leave']:
+    if txt in exit_command_list:
         main()
     os.system('cls')
     print('How many shifts?')
@@ -64,7 +66,7 @@ def cipher():
 
 def decipher():
     txt = input('Input sentence to decipher:\n>')
-    if txt in ['exit', 'e', 'leave', 'back', '-exit', '-e', 'back', 'leave']:
+    if txt in exit_command_list:
         main()
     os.system('cls')
     print('How many shifts?')
@@ -149,7 +151,7 @@ def bruteforce():
         
         if is_digit(choice) == False:
             
-            if choice.lower() in ['exit', 'e', 'leave', 'back', '-exit', '-e', 'back', 'leave']:
+            if choice.lower() in exit_command_list:
                 break
             print('-' * 20)
             print('Must be a digit')
@@ -164,7 +166,7 @@ def bruteforce():
                 print ("\033[A                             \033[A")
                 print ("\033[A                             \033[A")
                 choice = input('Type number to show full text\nWrite exit to skip\n>')
-                if choice.lower() in ['exit', 'e', 'leave', 'back', '-exit', '-e', 'back', 'leave']:
+                if choice.lower() in exit_command_list:
                     main()
                 else:
                     choice = int(choice)
@@ -196,7 +198,7 @@ def main():
         print(header)
         choice = input(commands).lower()
         os.system('cls')
-        if choice.lower() in ['exit', 'e', 'leave', '-exit', '-e', 'leave']:
+        if choice.lower() in exit_command_list:
             os.system("taskkill /f /im cmd.exe")
             exit()
         elif choice in ['cipher', '-cipher', 'c', '-c']:
