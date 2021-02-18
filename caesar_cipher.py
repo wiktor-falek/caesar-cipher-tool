@@ -188,7 +188,7 @@ E would become B, and so on. The method is named after Julius Caesar, who used i
        
 
 def main():
-    header = f"{'-' * 34}\nCaesar Cipher Tool by Wiktor Fałek\n{'-' * 34}"
+    header = f"{'-' * 34}\nCaesar Cipher Tool by wiktor-falek\ngithub.com/wiktor-falek/caesar-cipher-tool\n{'-' * 34}"
     commands = 'Available commands:\n\n-cipher\n-decipher\n-bruteforce\n-info\n-exit\n>'
     
     while True:
